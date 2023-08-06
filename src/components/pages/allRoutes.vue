@@ -1,76 +1,46 @@
 <template>
   <section>
     <landingPage></landingPage>
-    <div class="relative">
-      <h2
-        class="w-full text-3xl font-bold text-center text-indigo-700 sm:text-4xl md:text-5xl"
-      >
-        Available Routes
-      </h2>
-      <p
-        class="w-full py-8 mx-auto -mt-2 text-lg text-center text-gray-900 intro sm:max-w-3xl"
-      >
-        Rehoboth was founded to help parents provide safe, reliable
-        transportation for their children to and from school. We know getting
-        the kids out the door on time can be stressful. Our service handles the
-        school commute so you don&apos;t have to
-      </p>
-    </div>
-    <!-- This example requires Tailwind CSS v2.0+ -->
-    <ul
-      role="list"
-      class="grid grid-cols-1 p-4 gap-6 sm:grid-cols-2 lg:grid-cols-3"
-    >
-      <li
-        v-for="route in routes"
-        :key="route._id"
-        class="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200"
-      >
-        <div class="w-full flex items-center justify-between p-6 space-x-6">
-          <div class="flex-1 truncate">
-            <div class="items-center space-x-3">
-              <h3 class="text-gray-900 text-sm font-medium truncate">
-                From {{ route.startingPoint }} to {{ route.endingPoint }}
-              </h3>
-              <span
-                class="flex-shrink-0 inline-block px-2 py-0.5 text-gray-900 text-xs font-mediumrounded-full"
-                >{{ route.description }}</span
-              >
-            </div>
-            <ul>
-              <li class="flex" v-for="path in route.path" :key="path._id">
-                <svg
-                  class="h-6 w-6 text-indigo-700"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-                <p class="mt-1 text-gray-500 text-sm truncate">
-                  {{ path.name }}
-                </p>
-              </li>
-            </ul>
-          </div>
-          <div class="flex items-center space-x-3">
-            <h3 class="text-gray-900 text-md font-medium truncate">Price:</h3>
-            <span
-              class="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-md font-medium bg-green-100 rounded-full"
-              >{{ route.price }}</span
-            >
-          </div>
+    <section>
+    <div class="bg-white">
+      <div class="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
+        <div class="sm:flex sm:flex-col sm:align-center">
+          <h1 class="text-5xl font-extrabold text-indigo-700 sm:text-center">
+            Available Routes
+          </h1>
+          <p class="mt-5 text-xl text-gray-500 sm:text-center">
+            Start building for free, then add a site plan to go live. Account
+            plans unlock additional features.
+          </p>
         </div>
-        <div>
-          <div class="-mt-px flex divide-x divide-gray-200">
-            <div class="w-0 flex-1 flex">
+        <div
+          class="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-4"
+        >
+          <div
+            v-for="route in routes"
+            :key="route._id"
+            class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200"
+          >
+            <div class="p-6">
+            
+
+              <p class="mt-8">
+                <span class="text-3xl font-extrabold text-indigo-700"
+                  >From {{ route.startingPoint }}</span
+                >
+
+                <!-- <span class="text-base font-medium text-gray-500">To</span> -->
+                <span class="text-3xl font-extrabold text-indigo-700">
+                  To {{ route.endingPoint }}</span
+                >
+              </p>
+
+              <p class="">
+                <span class="text-xl justify-end font-extrabold text-indigo-900"
+                  >ETB {{ route.price }}/mo</span
+                >
+              </p>
+
               <router-link
                 v-on:click="EdittoggleModal()"
                 :to="{
@@ -78,51 +48,45 @@
                     id: route._id,
                   },
                 }"
+                class="mt-8 block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900"
               >
-                <div class="flex justify-center">
-                  <!-- Heroicon name: solid/mail -->
+                Register
+              </router-link>
+            </div>
+            <div class="pt-6 pb-8 px-6">
+              <h3
+                class="text-xs font-medium text-indigo-700 tracking-wide uppercase"
+              >
+                Path
+              </h3>
+              <ul role="list" class="mt-6 space-y-4">
+                <li
+                  v-for="path in route.path"
+                  :key="path._id"
+                  class="flex space-x-3"
+                >
+                  <!-- Heroicon name: solid/check -->
                   <svg
-                    class="w-5 h-5 text-gray-400"
+                    class="flex-shrink-0 h-5 w-5 text-indigo-700"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     aria-hidden="true"
                   >
                     <path
-                      d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
-                    />
-                    <path
-                      d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
                     />
                   </svg>
-                  <span class="ml-3">Register</span>
-                </div>
-              </router-link>
+                  <span class="text-sm text-gray-900">{{ path.name }}</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </li>
-
-      <!-- More people... -->
-    </ul>
-
-    <!--
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
-
+      </div>
+    </div>
     <!-- CREATE HERO MODAL STARTS HERE-->
     <div
       v-if="EditshowModal"
@@ -194,24 +158,10 @@
                         </div>
                         <div class="flex flex-1 flex-col justify-between">
                           <div class="divide-y divide-gray-200 px-4 sm:px-6">
-                            <!-- <form @submit.prevent="registerCustomer" class="mt-6"> -->
-                              {{ this.$route.params.id}}
                             <form
                               @submit.prevent="registerCustomer"
                               class="my-8 text-sm"
                             >
-                              <!-- <div class="flex flex-col my-4">
-                                <label for="parent-name" class="text-gray-700"
-                                  >Route</label
-                                >
-                                <input
-                                  type="text"
-                                  id="route"
-                                  v-model="routeId"
-                                  class="mt-2 p-2 border border-gray-300 focus:outline-none focus:ring-0 focus:border-gray-300 rounded text-sm text-gray-900"
-                                  placeholder="route"
-                                />
-                              </div> -->
                               <div class="flex flex-col my-4">
                                 <label for="parent-name" class="text-gray-700"
                                   >Parent Name</label
@@ -300,6 +250,7 @@
       class="opacity-25 fixed inset-0 z-40 bg-black"
     ></div>
     <!-- CREATE HERO MODAL ENDSS HERE-->
+  </section>
   </section>
 </template>
 <script>

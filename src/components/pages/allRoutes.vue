@@ -1,6 +1,6 @@
 <template>
   <section>
-    <landingPage></landingPage>
+    <navBar></navBar>
     <section>
     <div class="bg-white">
       <div class="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
@@ -9,8 +9,7 @@
             Available Routes
           </h1>
           <p class="mt-5 text-xl text-gray-500 sm:text-center">
-            Start building for free, then add a site plan to go live. Account
-            plans unlock additional features.
+            Find the route that fits your location, your budget, and your needs. With our ride service, you can get to and from school easily, no matter where you live.
           </p>
         </div>
         <div
@@ -254,7 +253,7 @@
   </section>
 </template>
 <script>
-import landingPage from "./landingPage.vue";
+import navBar from "./navbarView.vue";
 import store from "@/store";
 export default {
   data() {
@@ -269,7 +268,7 @@ export default {
     };
   },
   components: {
-    landingPage,
+    navBar,
   },
   computed: {
     routes() {

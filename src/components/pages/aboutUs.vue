@@ -9,7 +9,7 @@
           About Rehoboth
         </h2>
         <p
-          class="w-full py-8 mx-auto -mt-2 text-lg text-center text-gray-900 intro sm:max-w-3xl"
+          class="w-full py-8 mx-auto -mt-2 text-sm lg:text-lg text-center text-gray-900 intro sm:max-w-3xl"
         >
           Rehoboth was founded to help parents provide safe, reliable
           transportation for their children to and from school. We know getting
@@ -31,9 +31,9 @@
         >
           <!-- service block -->
           <div
-            class="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2"
+            class="py-8 px-6 mb-12  bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2"
           >
-            <div class="inline-block text-gray-900 mb-4">
+            <div class="inline-block  text-gray-900 mb-4">
               <!-- icon -->
               <Vue3Lottie
                 :animationData="Animation1"
@@ -46,7 +46,7 @@
             >
               Our Mission
             </h3>
-            <p class="text-gray-500">
+            <p class="text-sm lg:text-lg text-gray-500">
               The mission of Rehoboth is to provide safe, reliable
               transportation to take students to and from school, giving
               families peace of mind and easing the stress of the daily commute.
@@ -67,7 +67,7 @@
         >
           <!-- service block -->
           <div
-            class="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2"
+            class="py-8 px-6 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2"
           >
             <div class="inline-block text-gray-900 mb-4">
               <!-- icon -->
@@ -80,9 +80,9 @@
             <h3
               class="text-lg leading-normal mb-2 font-semibold text-indigo-700"
             >
-              Our Vission
+              Our Vision
             </h3>
-            <p class="text-gray-500">
+            <p class="text-sm lg:text-lg text-gray-500">
               Our vision is to be the leading provider of student transportation
               services by delivering an exceptional experience that benefits
               both families and schools.
@@ -103,7 +103,7 @@
         >
           <!-- service block -->
           <div
-            class="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2"
+            class="py-8 px-6 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2"
           >
             <div class="inline-block text-gray-900 mb-4">
               <!-- icon -->
@@ -118,7 +118,7 @@
             >
               Our Goal
             </h3>
-            <p class="text-gray-500">
+            <p class="text-sm lg:text-lg text-gray-500">
               Our vision is to be the leading provider of student transportation
               services by delivering an exceptional experience that benefits
               both families and schools.
